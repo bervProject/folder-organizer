@@ -1,0 +1,330 @@
+{
+  "pbtResults": {
+    "2.2 Write property test for MetadataRecord round-trip fidelity": {
+      "status": "passed",
+      "lastRunTimestamp": 1788582830730
+    },
+    "5.2 Write property test for recursive enumeration completeness": {
+      "status": "passed",
+      "lastRunTimestamp": 1788585206403
+    },
+    "5.4 Write property test for discovery count accuracy": {
+      "status": "passed",
+      "lastRunTimestamp": 1788585370861
+    },
+    "5.3 Write property test for exclusion filter correctness": {
+      "status": "passed",
+      "lastRunTimestamp": 1788585382345
+    },
+    "6.2 Write property test for SHA-256 correctness": {
+      "status": "passed",
+      "lastRunTimestamp": 1788586118355
+    }
+  },
+  "executionHistory": {
+    "1.1 Create the `folder_organizer` package and project layout": [
+      {
+        "executionId": "d817bf55-6423-4f2e-92b7-e18f4eebef4b",
+        "chatSessionId": "sess_c806000f-be05-4f03-9a6e-8db1c6ce57d0",
+        "timestamp": 1788582089549
+      },
+      {
+        "executionId": "d817bf55-6423-4f2e-92b7-e18f4eebef4b",
+        "chatSessionId": "sess_c806000f-be05-4f03-9a6e-8db1c6ce57d0",
+        "timestamp": 1788582357053
+      }
+    ],
+    "1.2 Create `pyproject.toml` with all dependencies pinned": [
+      {
+        "executionId": "d817bf55-6423-4f2e-92b7-e18f4eebef4b",
+        "chatSessionId": "sess_c806000f-be05-4f03-9a6e-8db1c6ce57d0",
+        "timestamp": 1788582094085
+      },
+      {
+        "executionId": "d817bf55-6423-4f2e-92b7-e18f4eebef4b",
+        "chatSessionId": "sess_c806000f-be05-4f03-9a6e-8db1c6ce57d0",
+        "timestamp": 1788582362703
+      }
+    ],
+    "1. Project scaffolding and package structure": [
+      {
+        "executionId": "d817bf55-6423-4f2e-92b7-e18f4eebef4b",
+        "chatSessionId": "sess_c806000f-be05-4f03-9a6e-8db1c6ce57d0",
+        "timestamp": 1788582362775
+      }
+    ],
+    "2.1 Implement `models.py` — all pipeline DTOs and `MetadataRecord`": [
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582472508
+      },
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582685601
+      }
+    ],
+    "2.3 Implement `taxonomy.py` — default category list and taxonomy validation": [
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582472697
+      },
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582686348
+      }
+    ],
+    "2.2 Write property test for MetadataRecord round-trip fidelity": [
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582692548
+      },
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582846351
+      }
+    ],
+    "2. Shared data models and taxonomy": [
+      {
+        "executionId": "a552c0ce-8794-4d5d-a0a5-343a521ae338",
+        "chatSessionId": "sess_84ee2138-b634-4273-b633-40e070e61149",
+        "timestamp": 1788582846428
+      }
+    ],
+    "3.1 Implement `config.py` — `Config` dataclass and `ConfigLoader`": [
+      {
+        "executionId": "48174465-f983-4b6a-9c05-1c7ac0dc7b36",
+        "chatSessionId": "sess_54614844-fb82-4768-8843-fa96d6668f47",
+        "timestamp": 1788583003528
+      },
+      {
+        "executionId": "48174465-f983-4b6a-9c05-1c7ac0dc7b36",
+        "chatSessionId": "sess_54614844-fb82-4768-8843-fa96d6668f47",
+        "timestamp": 1788583481104
+      }
+    ],
+    "3.2 Write property test for CLI flags overriding config file values": [
+      {
+        "executionId": "48174465-f983-4b6a-9c05-1c7ac0dc7b36",
+        "chatSessionId": "sess_54614844-fb82-4768-8843-fa96d6668f47",
+        "timestamp": 1788583486873
+      }
+    ],
+    "3.3 Write unit tests for `ConfigLoader`": [
+      {
+        "executionId": "48174465-f983-4b6a-9c05-1c7ac0dc7b36",
+        "chatSessionId": "sess_54614844-fb82-4768-8843-fa96d6668f47",
+        "timestamp": 1788583492586
+      }
+    ],
+    "3. Configuration layer": [
+      {
+        "executionId": "48174465-f983-4b6a-9c05-1c7ac0dc7b36",
+        "chatSessionId": "sess_54614844-fb82-4768-8843-fa96d6668f47",
+        "timestamp": 1788583492672
+      }
+    ],
+    "4.1 Implement `cli.py` — Typer app with all flags": [
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788583579760
+      },
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788583764881
+      }
+    ],
+    "4.2 Implement `__main__.py` entry point": [
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788583580250
+      },
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788583766470
+      }
+    ],
+    "4.3 Write unit tests for `cli.py` validation logic": [
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788583772700
+      },
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788584470178
+      }
+    ],
+    "4. CLI layer": [
+      {
+        "executionId": "8f976360-74c8-4162-aaaa-c8ee9c1a50d5",
+        "chatSessionId": "sess_dffa4da7-bfd5-4764-a4df-e5d63d1095e4",
+        "timestamp": 1788584470262
+      }
+    ],
+    "5.1 Implement `discoverer.py` — recursive enumeration with exclusion and symlink handling": [
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788584549888
+      },
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788584858370
+      }
+    ],
+    "5.2 Write property test for recursive enumeration completeness": [
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788584864933
+      },
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788585222756
+      }
+    ],
+    "5.3 Write property test for exclusion filter correctness": [
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788584870684
+      },
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788585662641
+      }
+    ],
+    "5.4 Write property test for discovery count accuracy": [
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788584876774
+      },
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788585670540
+      }
+    ],
+    "5.5 Write unit tests for `FileDiscoverer`": [
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788584882539
+      },
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788585676591
+      }
+    ],
+    "5. File Discoverer": [
+      {
+        "executionId": "06f5a921-28aa-4623-8a3c-1276c30ddc34",
+        "chatSessionId": "sess_4b0f4ac1-c969-4077-a3d6-a0b6e747b331",
+        "timestamp": 1788585676698
+      }
+    ],
+    "6.1 Implement `inspector.py` — MIME detection, text extraction, SHA-256": [
+      {
+        "executionId": "bf295789-5170-4245-8c06-13db3b09bd92",
+        "chatSessionId": "sess_780148e6-95d3-45f2-8bc4-db1d1bd8b6c6",
+        "timestamp": 1788585791610
+      },
+      {
+        "executionId": "bf295789-5170-4245-8c06-13db3b09bd92",
+        "chatSessionId": "sess_780148e6-95d3-45f2-8bc4-db1d1bd8b6c6",
+        "timestamp": 1788586010609
+      }
+    ],
+    "6.3 Write property test for extraction char count bounds": [
+      {
+        "executionId": "bf295789-5170-4245-8c06-13db3b09bd92",
+        "chatSessionId": "sess_780148e6-95d3-45f2-8bc4-db1d1bd8b6c6",
+        "timestamp": 1788586016220
+      }
+    ],
+    "6.4 Write unit tests for `FileInspector`": [
+      {
+        "executionId": "bf295789-5170-4245-8c06-13db3b09bd92",
+        "chatSessionId": "sess_780148e6-95d3-45f2-8bc4-db1d1bd8b6c6",
+        "timestamp": 1788586016786
+      }
+    ],
+    "6. File Inspector": [
+      {
+        "executionId": "bf295789-5170-4245-8c06-13db3b09bd92",
+        "chatSessionId": "sess_780148e6-95d3-45f2-8bc4-db1d1bd8b6c6",
+        "timestamp": 1788586016921
+      }
+    ],
+    "6.2 Write property test for SHA-256 correctness": [
+      {
+        "executionId": "74a84f91-763c-4a3b-bb65-370938f6d9a3",
+        "chatSessionId": "sess_71a7cc4e-459c-49aa-bfd0-20e29b643ad3",
+        "timestamp": 1788586056472
+      },
+      {
+        "executionId": "74a84f91-763c-4a3b-bb65-370938f6d9a3",
+        "chatSessionId": "sess_71a7cc4e-459c-49aa-bfd0-20e29b643ad3",
+        "timestamp": 1788586132383
+      }
+    ],
+    "7. Checkpoint — ensure scaffolding, models, config, CLI, discoverer, and inspector tests pass": [
+      {
+        "executionId": "59317a37-83b6-4022-bb8a-57e93d61c541",
+        "chatSessionId": "sess_37f42e52-bdd2-4c13-978f-e1489b25cae5",
+        "timestamp": 1788586207778
+      }
+    ],
+    "8.1 Implement `categorizer.py` — OpenAI structured outputs and fallback chain": [
+      {
+        "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
+        "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
+        "timestamp": 1788586295405
+      }
+    ],
+    "8.2 Write property test for confidence score range": [
+      {
+        "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
+        "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
+        "timestamp": 1788586301238
+      }
+    ],
+    "8.3 Write property test for duplicate file deduplication": [
+      {
+        "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
+        "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
+        "timestamp": 1788586306885
+      }
+    ],
+    "8.4 Write property test for non-empty category assignment": [
+      {
+        "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
+        "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
+        "timestamp": 1788586312670
+      }
+    ],
+    "8.5 Write unit tests for `AICategorizer`": [
+      {
+        "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
+        "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
+        "timestamp": 1788586319018
+      }
+    ]
+  }
+}
