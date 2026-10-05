@@ -19,6 +19,34 @@
     "6.2 Write property test for SHA-256 correctness": {
       "status": "passed",
       "lastRunTimestamp": 1788586118355
+    },
+    "8.3 Write property test for duplicate file deduplication": {
+      "status": "passed",
+      "lastRunTimestamp": 1791172498201
+    },
+    "8.4 Write property test for non-empty category assignment": {
+      "status": "passed",
+      "lastRunTimestamp": 1791172711398
+    },
+    "9.2 Write property test for sanitize_name idempotency": {
+      "status": "passed",
+      "lastRunTimestamp": 1791173668393
+    },
+    "10.2 Write property test for conflict resolution uniqueness": {
+      "status": "passed",
+      "lastRunTimestamp": 1791174486405
+    },
+    "10.3 Write property test for mtime preservation": {
+      "status": "passed",
+      "lastRunTimestamp": 1791174716071
+    },
+    "11.2 Write property test for metadata merge preserving existing records": {
+      "status": "passed",
+      "lastRunTimestamp": 1791178367779
+    },
+    "12.2 Write property test for structured log entry completeness": {
+      "status": "passed",
+      "lastRunTimestamp": 1791179443515
     }
   },
   "executionHistory": {
@@ -296,6 +324,16 @@
         "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
         "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
         "timestamp": 1788586295405
+      },
+      {
+        "executionId": "00ecbe2c-3192-4c38-96b4-8a2b216595cc",
+        "chatSessionId": "sess_779ea2c3-b24f-4c99-a64a-3a9096b4a365",
+        "timestamp": 1791172104770
+      },
+      {
+        "executionId": "00ecbe2c-3192-4c38-96b4-8a2b216595cc",
+        "chatSessionId": "sess_779ea2c3-b24f-4c99-a64a-3a9096b4a365",
+        "timestamp": 1791172256670
       }
     ],
     "8.2 Write property test for confidence score range": [
@@ -310,6 +348,16 @@
         "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
         "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
         "timestamp": 1788586306885
+      },
+      {
+        "executionId": "e132cf76-cae7-4ffe-979c-dd485a6a7054",
+        "chatSessionId": "sess_afb0dece-81c0-456c-b77a-6a83a0751a32",
+        "timestamp": 1791172406544
+      },
+      {
+        "executionId": "e132cf76-cae7-4ffe-979c-dd485a6a7054",
+        "chatSessionId": "sess_afb0dece-81c0-456c-b77a-6a83a0751a32",
+        "timestamp": 1791172512308
       }
     ],
     "8.4 Write property test for non-empty category assignment": [
@@ -317,6 +365,16 @@
         "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
         "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
         "timestamp": 1788586312670
+      },
+      {
+        "executionId": "35743eac-34c2-4cf6-acd9-cb1cd540ab3c",
+        "chatSessionId": "sess_c2b7fda3-c3ad-406e-95b0-597713149223",
+        "timestamp": 1791172592851
+      },
+      {
+        "executionId": "35743eac-34c2-4cf6-acd9-cb1cd540ab3c",
+        "chatSessionId": "sess_c2b7fda3-c3ad-406e-95b0-597713149223",
+        "timestamp": 1791172725796
       }
     ],
     "8.5 Write unit tests for `AICategorizer`": [
@@ -324,6 +382,221 @@
         "executionId": "e3f7e484-d9c8-4a3d-b6b7-0f50070c41ff",
         "chatSessionId": "sess_98c28874-2f0f-492c-9c07-693cd56a09f9",
         "timestamp": 1788586319018
+      },
+      {
+        "executionId": "4194977e-3202-457e-9a29-d7166e035bf2",
+        "chatSessionId": "sess_865ffa81-b5a3-40ff-a450-ca22a54fdc38",
+        "timestamp": 1791172759232
+      },
+      {
+        "executionId": "4194977e-3202-457e-9a29-d7166e035bf2",
+        "chatSessionId": "sess_865ffa81-b5a3-40ff-a450-ca22a54fdc38",
+        "timestamp": 1791172938076
+      }
+    ],
+    "8. AI Categorizer": [
+      {
+        "executionId": "4194977e-3202-457e-9a29-d7166e035bf2",
+        "chatSessionId": "sess_865ffa81-b5a3-40ff-a450-ca22a54fdc38",
+        "timestamp": 1791172938298
+      }
+    ],
+    "9.1 Implement `folder_generator.py` — placement resolution and name sanitization": [
+      {
+        "executionId": "3cae2a3d-3de2-41a7-9a2a-e8b63c344e7f",
+        "chatSessionId": "sess_91daa9a5-fe00-46b3-96e3-cc542407086f",
+        "timestamp": 1791173041786
+      },
+      {
+        "executionId": "3cae2a3d-3de2-41a7-9a2a-e8b63c344e7f",
+        "chatSessionId": "sess_91daa9a5-fe00-46b3-96e3-cc542407086f",
+        "timestamp": 1791173489132
+      }
+    ],
+    "9. Folder Generator": [
+      {
+        "executionId": "3cae2a3d-3de2-41a7-9a2a-e8b63c344e7f",
+        "chatSessionId": "sess_91daa9a5-fe00-46b3-96e3-cc542407086f",
+        "timestamp": 1791173489274
+      }
+    ],
+    "9.2 Write property test for sanitize_name idempotency": [
+      {
+        "executionId": "ad2583be-bd93-4f5e-b0f0-8f99c1bd7f21",
+        "chatSessionId": "sess_68d21b5f-3619-4c88-bf6e-59eacc25bf0b",
+        "timestamp": 1791173615915
+      },
+      {
+        "executionId": "ad2583be-bd93-4f5e-b0f0-8f99c1bd7f21",
+        "chatSessionId": "sess_68d21b5f-3619-4c88-bf6e-59eacc25bf0b",
+        "timestamp": 1791173679905
+      }
+    ],
+    "9.3 Write unit tests for `FolderGenerator`": [
+      {
+        "executionId": "e66afb99-d5a1-42a5-b6be-0599ed9660fb",
+        "chatSessionId": "sess_86a228f9-1bb6-40e9-ad17-8c3efb392419",
+        "timestamp": 1791173703408
+      },
+      {
+        "executionId": "e66afb99-d5a1-42a5-b6be-0599ed9660fb",
+        "chatSessionId": "sess_86a228f9-1bb6-40e9-ad17-8c3efb392419",
+        "timestamp": 1791173760641
+      }
+    ],
+    "10.1 Implement `file_mover.py` — move with conflict resolution and mtime preservation": [
+      {
+        "executionId": "046b35e9-0f00-4bee-934a-db06d6ba4e32",
+        "chatSessionId": "sess_da83c61e-53cf-4f54-bcac-4b3094e06067",
+        "timestamp": 1791173812101
+      },
+      {
+        "executionId": "046b35e9-0f00-4bee-934a-db06d6ba4e32",
+        "chatSessionId": "sess_da83c61e-53cf-4f54-bcac-4b3094e06067",
+        "timestamp": 1791174249637
+      }
+    ],
+    "10.2 Write property test for conflict resolution uniqueness": [
+      {
+        "executionId": "c3681756-6004-4f4f-ad65-d5b3bc9ccef5",
+        "chatSessionId": "sess_afac9ed7-159b-446d-bed3-fa3db2e6cd9d",
+        "timestamp": 1791174325761
+      },
+      {
+        "executionId": "c3681756-6004-4f4f-ad65-d5b3bc9ccef5",
+        "chatSessionId": "sess_afac9ed7-159b-446d-bed3-fa3db2e6cd9d",
+        "timestamp": 1791174498202
+      }
+    ],
+    "10.3 Write property test for mtime preservation": [
+      {
+        "executionId": "ccb5d36d-fe99-4485-8143-8d96166029f8",
+        "chatSessionId": "sess_c829e0b6-66f7-45b5-a233-8168c0bf71d5",
+        "timestamp": 1791174644861
+      },
+      {
+        "executionId": "ccb5d36d-fe99-4485-8143-8d96166029f8",
+        "chatSessionId": "sess_c829e0b6-66f7-45b5-a233-8168c0bf71d5",
+        "timestamp": 1791174730129
+      }
+    ],
+    "10.4 Write unit tests for `FileMover`": [
+      {
+        "executionId": "f3ff0e97-6f58-435a-b3d1-10dd3fa4e8ec",
+        "chatSessionId": "sess_ca15ec67-18d9-4b99-bb50-fad8acea2d61",
+        "timestamp": 1791174754407
+      },
+      {
+        "executionId": "ebd28b0e-3270-46c9-abf6-9e187b4821ea",
+        "chatSessionId": "sess_ca15ec67-18d9-4b99-bb50-fad8acea2d61",
+        "timestamp": 1791177926866
+      }
+    ],
+    "10. File Mover": [
+      {
+        "executionId": "ebd28b0e-3270-46c9-abf6-9e187b4821ea",
+        "chatSessionId": "sess_ca15ec67-18d9-4b99-bb50-fad8acea2d61",
+        "timestamp": 1791177928642
+      }
+    ],
+    "11.1 Implement `metadata_store.py` — load, upsert, merge, and atomic flush": [
+      {
+        "executionId": "7bd2d554-67b7-4386-bd94-26fc69adac5b",
+        "chatSessionId": "sess_ac5f35b1-0693-49d7-ad6a-c8ea642a1fe2",
+        "timestamp": 1791177947721
+      },
+      {
+        "executionId": "7bd2d554-67b7-4386-bd94-26fc69adac5b",
+        "chatSessionId": "sess_ac5f35b1-0693-49d7-ad6a-c8ea642a1fe2",
+        "timestamp": 1791178189082
+      }
+    ],
+    "11.2 Write property test for metadata merge preserving existing records": [
+      {
+        "executionId": "11aa3cd2-7785-466f-aa1f-150171164f06",
+        "chatSessionId": "sess_bb0fbbe5-e047-4e33-be87-925d6f6fb697",
+        "timestamp": 1791178201510
+      },
+      {
+        "executionId": "11aa3cd2-7785-466f-aa1f-150171164f06",
+        "chatSessionId": "sess_bb0fbbe5-e047-4e33-be87-925d6f6fb697",
+        "timestamp": 1791178381730
+      }
+    ],
+    "11.3 Write unit tests for `MetadataStore`": [
+      {
+        "executionId": "601d3258-7fea-43b5-9906-bffcff9fd33d",
+        "chatSessionId": "sess_f30d08e9-a5df-4401-bbd0-db23f81e7aec",
+        "timestamp": 1791178404942
+      },
+      {
+        "executionId": "601d3258-7fea-43b5-9906-bffcff9fd33d",
+        "chatSessionId": "sess_f30d08e9-a5df-4401-bbd0-db23f81e7aec",
+        "timestamp": 1791178790927
+      }
+    ],
+    "11. Metadata Store": [
+      {
+        "executionId": "601d3258-7fea-43b5-9906-bffcff9fd33d",
+        "chatSessionId": "sess_f30d08e9-a5df-4401-bbd0-db23f81e7aec",
+        "timestamp": 1791178791055
+      }
+    ],
+    "12.1 Implement `logger.py` — Rich progress, JSON-Lines log, SIGINT handler": [
+      {
+        "executionId": "8c6e07a9-fdd8-4b11-a0b2-b841f4f87a10",
+        "chatSessionId": "sess_a636c6c4-b069-43c3-90e4-3cc8604a7edf",
+        "timestamp": 1791178817632
+      },
+      {
+        "executionId": "8c6e07a9-fdd8-4b11-a0b2-b841f4f87a10",
+        "chatSessionId": "sess_a636c6c4-b069-43c3-90e4-3cc8604a7edf",
+        "timestamp": 1791179108787
+      }
+    ],
+    "12. Logger and Progress Reporter": [
+      {
+        "executionId": "8c6e07a9-fdd8-4b11-a0b2-b841f4f87a10",
+        "chatSessionId": "sess_a636c6c4-b069-43c3-90e4-3cc8604a7edf",
+        "timestamp": 1791179108889
+      }
+    ],
+    "12.2 Write property test for structured log entry completeness": [
+      {
+        "executionId": "56970203-2c23-436f-88d9-cb40a2606a4e",
+        "chatSessionId": "sess_8fc1be4e-6895-4cc6-8164-ea120d406762",
+        "timestamp": 1791179171554
+      },
+      {
+        "executionId": "56970203-2c23-436f-88d9-cb40a2606a4e",
+        "chatSessionId": "sess_8fc1be4e-6895-4cc6-8164-ea120d406762",
+        "timestamp": 1791179458846
+      }
+    ],
+    "12.3 Write unit tests for `OrganizerLogger`": [
+      {
+        "executionId": "c542c83e-20a0-4b05-b200-8d783ea3e4f8",
+        "chatSessionId": "sess_258ff175-67f5-407b-9f6d-55fcdf2a8c9b",
+        "timestamp": 1791179480188
+      },
+      {
+        "executionId": "c542c83e-20a0-4b05-b200-8d783ea3e4f8",
+        "chatSessionId": "sess_258ff175-67f5-407b-9f6d-55fcdf2a8c9b",
+        "timestamp": 1791179601845
+      }
+    ],
+    "13. Checkpoint — ensure all component tests pass before pipeline wiring": [
+      {
+        "executionId": "5f191caa-a0fe-414f-8c9c-c7a3d2b196f2",
+        "chatSessionId": "sess_279eb502-05ba-40f8-9537-201ac09bba9c",
+        "timestamp": 1791179763247
+      }
+    ],
+    "14.1 Implement `organizer.py` — pipeline wiring and dry-run short-circuit": [
+      {
+        "executionId": "bbafabcc-2b1c-4030-a885-097b71293a1d",
+        "chatSessionId": "sess_5aea0930-d7ec-4694-8a47-4254df5896b2",
+        "timestamp": 1791179812467
       }
     ]
   }

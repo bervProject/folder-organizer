@@ -168,8 +168,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [~] 8. AI Categorizer
-  - [-] 8.1 Implement `categorizer.py` — OpenAI structured outputs and fallback chain
+- [x] 8. AI Categorizer
+  - [x] 8.1 Implement `categorizer.py` — OpenAI structured outputs and fallback chain
     - Implement `AICategorizer.categorize(file: InspectedFile, existing_record: Optional[MetadataRecord]) -> CategorizationResult`
     - Before calling AI: check `MetadataStore` for existing record with matching `sha256`; reuse if found and not stale (Requirement 5.7)
     - Assemble prompt using `extracted_text`, `filename`, `extension`, `size_bytes`, `mime_type` and the full taxonomy list
@@ -180,25 +180,25 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - If AI fails AND extension absent/unrecognized: assign `"Uncategorized"`, `fallback_used = True`, `review_required = True`
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8_
 
-  - [-] 8.2 Write property test for confidence score range
+  - [x] 8.2 Write property test for confidence score range
     - **Property 2: Confidence score is always in range**
     - Generate arbitrary file signals through the categorizer with mocked AI responses returning arbitrary floats; assert `0.0 <= result.confidence <= 1.0` for all AI and fallback paths
     - Tag: `# Feature: local-file-organizer, Property 2: Confidence score is always in range`
     - **Validates: Requirements 4.2, 4.6**
 
-  - [-] 8.3 Write property test for duplicate file deduplication
+  - [x] 8.3 Write property test for duplicate file deduplication
     - **Property 4: Duplicate files reuse existing categorization**
     - Generate two `InspectedFile` instances with identical `sha256`; process the first, seed the metadata store; process the second; assert AI is not called again and result matches first
     - Tag: `# Feature: local-file-organizer, Property 4: Duplicate files reuse existing categorization`
     - **Validates: Requirements 4.5, 5.5**
 
-  - [-] 8.4 Write property test for non-empty category assignment
+  - [x] 8.4 Write property test for non-empty category assignment
     - **Property 16: Every processed file is assigned a non-empty category**
     - Generate arbitrary `InspectedFile` instances through all categorizer paths (AI, fallback, uncategorized); assert `result.category` is always a non-empty string and `subcategory` is non-empty string or `None`
     - Tag: `# Feature: local-file-organizer, Property 16: Every processed file is assigned a non-empty category`
     - **Validates: Requirements 4.1**
 
-  - [-] 8.5 Write unit tests for `AICategorizer`
+  - [x] 8.5 Write unit tests for `AICategorizer`
     - Test successful AI call returns correct `CategorizationResult`
     - Test out-of-taxonomy AI response triggers `review_required = True`
     - Test AI unavailable → `_fallback_categorize` used, `fallback_used = True`, `confidence = 0.0`
@@ -209,8 +209,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 9. Folder Generator
-  - [ ] 9.1 Implement `folder_generator.py` — placement resolution and name sanitization
+- [x] 9. Folder Generator
+  - [x] 9.1 Implement `folder_generator.py` — placement resolution and name sanitization
     - Implement `FolderGenerator.resolve_placement(file: CategorizedFile, target_dir: Path) -> PlacedFile`
     - Route `review_required=True` files to `target_dir/_review/`
     - Build destination path: `target_dir / sanitize(category) / sanitize(subcategory)` (subcategory level optional)
@@ -219,13 +219,13 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - Implement `FolderGenerator.sanitize_name(label: str) -> str`: replace any character not in `[A-Za-z0-9_\-. ]` with `_`
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5_
 
-  - [ ]* 9.2 Write property test for sanitize_name idempotency
+  - [x] 9.2 Write property test for sanitize_name idempotency
     - **Property 6: Folder name sanitization is idempotent**
     - Generate arbitrary Unicode strings with Hypothesis; assert `sanitize_name(sanitize_name(s)) == sanitize_name(s)`
     - Tag: `# Feature: local-file-organizer, Property 6: Folder name sanitization is idempotent`
     - **Validates: Requirements 6.3**
 
-  - [ ]* 9.3 Write unit tests for `FolderGenerator`
+  - [x] 9.3 Write unit tests for `FolderGenerator`
     - Test category folder created at correct path
     - Test subcategory subfolder created inside category folder
     - Test `review_required` file routed to `_review/`
@@ -235,8 +235,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 10. File Mover
-  - [ ] 10.1 Implement `file_mover.py` — move with conflict resolution and mtime preservation
+- [x] 10. File Mover
+  - [x] 10.1 Implement `file_mover.py` — move with conflict resolution and mtime preservation
     - Implement `FileMover.move(placed: PlacedFile) -> MoveResult`
     - Use `shutil.move` to move file to destination directory
     - After move, restore original `mtime` via `os.utime(destination, (atime, original_mtime))`
@@ -246,19 +246,19 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - If `dry_run=True`: compute resolved destination path without performing any I/O; return `MoveResult` with path but `success=False` (no actual move)
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 7.6_
 
-  - [ ]* 10.2 Write property test for conflict resolution uniqueness
+  - [x] 10.2 Write property test for conflict resolution uniqueness
     - **Property 5: Conflict resolution always produces a unique destination name**
     - Generate lists of files sharing the same base name (up to 9,999); move each into the same `tmp_path` directory; assert all destination paths are distinct and no two files share a path
     - Tag: `# Feature: local-file-organizer, Property 5: Conflict resolution always produces a unique destination name`
     - **Validates: Requirements 7.2, 7.6**
 
-  - [ ]* 10.3 Write property test for mtime preservation
+  - [x] 10.3 Write property test for mtime preservation
     - **Property 11: File last-modified timestamp is preserved after move**
     - Generate arbitrary files with arbitrary `mtime` values set via `os.utime`; move each file; assert `os.stat(destination).st_mtime == original_mtime`
     - Tag: `# Feature: local-file-organizer, Property 11: File last-modified timestamp is preserved after move`
     - **Validates: Requirements 7.3**
 
-  - [ ]* 10.4 Write unit tests for `FileMover`
+  - [x] 10.4 Write unit tests for `FileMover`
     - Test file moved to correct destination
     - Test conflict suffix appended correctly (`report_1.pdf`, `report_2.pdf`, ...)
     - Test suffix exhaustion at 9,999 logs error and skips file
@@ -268,8 +268,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 11. Metadata Store
-  - [ ] 11.1 Implement `metadata_store.py` — load, upsert, merge, and atomic flush
+- [x] 11. Metadata Store
+  - [x] 11.1 Implement `metadata_store.py` — load, upsert, merge, and atomic flush
     - Implement `MetadataStore.load(target_dir: Path) -> None`: read `organizer-metadata.json` if present; populate in-memory dict keyed by `original_path` and secondary index by `sha256`
     - Implement `MetadataStore.get_by_hash(sha256: str) -> Optional[MetadataRecord]`
     - Implement `MetadataStore.get_by_path(path: Path) -> Optional[MetadataRecord]`
@@ -279,13 +279,13 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - Skip re-processing if `sha256` matches and `category` is the same (Requirement 5.5); re-process and overwrite if `sha256` matches but `category` differs (Requirement 5.7)
     - _Requirements: 5.1, 5.3, 5.4, 5.5, 5.6, 5.7_
 
-  - [ ]* 11.2 Write property test for metadata merge preserving existing records
+  - [x] 11.2 Write property test for metadata merge preserving existing records
     - **Property 7: Metadata merge preserves existing records**
     - Generate two disjoint sets of `MetadataRecord` instances; load the first set, simulate a merge with the second set; assert all records from the first set are still present in the store after merge
     - Tag: `# Feature: local-file-organizer, Property 7: Metadata merge preserves existing records`
     - **Validates: Requirements 5.6**
 
-  - [ ]* 11.3 Write unit tests for `MetadataStore`
+  - [x] 11.3 Write unit tests for `MetadataStore`
     - Test load of existing `organizer-metadata.json` populates records correctly
     - Test upsert overwrites existing record by path
     - Test flush writes `organizer-metadata.json` atomically (temp file → rename)
@@ -296,8 +296,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 12. Logger and Progress Reporter
-  - [ ] 12.1 Implement `logger.py` — Rich progress, JSON-Lines log, SIGINT handler
+- [x] 12. Logger and Progress Reporter
+  - [x] 12.1 Implement `logger.py` — Rich progress, JSON-Lines log, SIGINT handler
     - Implement `OrganizerLogger` wrapping `Rich`'s `Progress` for the live progress indicator (files processed / total)
     - Configure a `logging.FileHandler` writing to `target_dir/organizer.log` with a JSON-Lines formatter
     - Each log entry format: `{"timestamp": "<ISO8601>", "level": "INFO|WARN|ERROR", "path": "...", "action": "...", "destination": "..."}`
@@ -305,13 +305,13 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - Install a `SIGINT` signal handler that calls `metadata_store.flush()` and prints a partial `RunSummary` before exiting with code 130
     - _Requirements: 9.1, 9.2, 9.4, 9.5_
 
-  - [ ]* 12.2 Write property test for structured log entry completeness
+  - [x] 12.2 Write property test for structured log entry completeness
     - **Property 17: Structured log entries contain all required fields**
     - Process arbitrary sets of files (mocked pipeline); parse each line of `organizer.log`; assert every entry contains valid ISO 8601 `timestamp`, `level` in `{INFO, WARN, ERROR}`, non-empty `path`, non-empty `action`
     - Tag: `# Feature: local-file-organizer, Property 17: Structured log entries contain all required fields`
     - **Validates: Requirements 9.2, 9.5**
 
-  - [ ]* 12.3 Write unit tests for `OrganizerLogger`
+  - [x] 12.3 Write unit tests for `OrganizerLogger`
     - Test progress indicator increments correctly
     - Test log entry written with all required fields for INFO, WARN, ERROR levels
     - Test ISO 8601 timestamp format in log entries
@@ -319,7 +319,7 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 13. Checkpoint — ensure all component tests pass before pipeline wiring
+- [x] 13. Checkpoint — ensure all component tests pass before pipeline wiring
   - Ensure all tests pass, ask the user if questions arise.
 
 ---
@@ -335,7 +335,7 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - Collect `RunSummary` counts as stages complete; display final summary on completion
     - _Requirements: 1.3, 1.4, 2.4, 8.1, 8.2, 8.3, 8.4, 9.1, 9.3_
 
-  - [ ]* 14.2 Write property test for below-threshold files never auto-moved
+  - [ ] 14.2 Write property test for below-threshold files never auto-moved
     - **Property 3: Below-threshold files are never auto-moved**
     - Generate `(threshold, confidence)` pairs where `confidence < threshold`; run mocked pipeline; assert file is routed to `_review/`, not a category folder
     - Tag: `# Feature: local-file-organizer, Property 3: Below-threshold files are never auto-moved`

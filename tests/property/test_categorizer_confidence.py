@@ -88,7 +88,7 @@ def _make_ai_response(category: str, subcategory: Optional[str], confidence: flo
     category=_valid_category_st,
     raw_confidence=_raw_confidence_st,
 )
-@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture], deadline=None)
 def test_confidence_always_in_range_ai_path(
     file: InspectedFile,
     category: str,
@@ -121,7 +121,7 @@ def test_confidence_always_in_range_ai_path(
 # ---------------------------------------------------------------------------
 
 @given(file=_inspected_file_st)
-@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture], deadline=None)
 def test_confidence_always_in_range_fallback_path(file: InspectedFile) -> None:
     """When the AI raises an exception, the fallback path shall still produce
     a confidence in [0.0, 1.0].

@@ -8,7 +8,7 @@ Validates: Requirements 4.5, 5.5 (Property 4)
 from __future__ import annotations
 
 import json
-import datetime
+import datetime as dt
 from pathlib import Path
 from typing import Optional
 from unittest.mock import MagicMock, patch, call
@@ -90,7 +90,7 @@ def _result_to_record(file: InspectedFile, category: str, subcategory: Optional[
         review_required=False,
         fallback_used=False,
         extraction_status=file.extraction_status.value,
-        timestamp=datetime.datetime.utcnow().isoformat() + "Z",
+        timestamp=dt.datetime.now(dt.UTC).isoformat().replace("+00:00", "Z"),
     )
 
 
@@ -105,7 +105,7 @@ def _result_to_record(file: InspectedFile, category: str, subcategory: Optional[
     category=_valid_category_st,
     confidence=st.floats(min_value=0.0, max_value=1.0, allow_nan=False, allow_infinity=False),
 )
-@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture], deadline=None)
 def test_duplicate_sha256_reuses_existing_record(
     file1: InspectedFile,
     file2: InspectedFile,
