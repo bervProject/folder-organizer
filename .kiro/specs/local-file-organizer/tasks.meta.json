@@ -47,6 +47,18 @@
     "12.2 Write property test for structured log entry completeness": {
       "status": "passed",
       "lastRunTimestamp": 1791179443515
+    },
+    "14.2 Write property test for below-threshold files never auto-moved": {
+      "status": "passed",
+      "lastRunTimestamp": 1794300740332
+    },
+    "14.4 Write property test for run summary count accuracy": {
+      "status": "passed",
+      "lastRunTimestamp": 1794301334693
+    },
+    "15.1 Write property test for dry run producing zero disk mutations": {
+      "status": "passed",
+      "lastRunTimestamp": 1794302158593
     }
   },
   "executionHistory": {
@@ -597,6 +609,176 @@
         "executionId": "bbafabcc-2b1c-4030-a885-097b71293a1d",
         "chatSessionId": "sess_5aea0930-d7ec-4694-8a47-4254df5896b2",
         "timestamp": 1791179812467
+      },
+      {
+        "executionId": "fb102bc9-0749-4a4d-9b70-335d9c80f35b",
+        "chatSessionId": "sess_9079c25c-cbfb-440a-9a43-479b40b6685e",
+        "timestamp": 1794300162091
+      },
+      {
+        "executionId": "fb102bc9-0749-4a4d-9b70-335d9c80f35b",
+        "chatSessionId": "sess_9079c25c-cbfb-440a-9a43-479b40b6685e",
+        "timestamp": 1794300428305
+      }
+    ],
+    "14.2 Write property test for below-threshold files never auto-moved": [
+      {
+        "executionId": "fb102bc9-0749-4a4d-9b70-335d9c80f35b",
+        "chatSessionId": "sess_9079c25c-cbfb-440a-9a43-479b40b6685e",
+        "timestamp": 1794300432985
+      },
+      {
+        "executionId": "fb102bc9-0749-4a4d-9b70-335d9c80f35b",
+        "chatSessionId": "sess_9079c25c-cbfb-440a-9a43-479b40b6685e",
+        "timestamp": 1794300752526
+      }
+    ],
+    "14.3 Write property test for every processed file having a complete MetadataRecord": [
+      {
+        "executionId": "53f40fc4-b16d-4556-8b1e-1fa954fead87",
+        "chatSessionId": "sess_d6bfe337-34f3-4b02-b805-ce549e65fc84",
+        "timestamp": 1794300806399
+      },
+      {
+        "executionId": "53f40fc4-b16d-4556-8b1e-1fa954fead87",
+        "chatSessionId": "sess_d6bfe337-34f3-4b02-b805-ce549e65fc84",
+        "timestamp": 1794301225667
+      }
+    ],
+    "14.4 Write property test for run summary count accuracy": [
+      {
+        "executionId": "6ed12236-1b9e-4380-b281-b4a0185fd10a",
+        "chatSessionId": "sess_03fd6412-8a15-4037-b804-6c1662423c69",
+        "timestamp": 1794301237307
+      },
+      {
+        "executionId": "6ed12236-1b9e-4380-b281-b4a0185fd10a",
+        "chatSessionId": "sess_03fd6412-8a15-4037-b804-6c1662423c69",
+        "timestamp": 1794301347667
+      }
+    ],
+    "14.5 Write unit tests for `Organizer`": [
+      {
+        "executionId": "9911541b-cef5-412b-9cb1-245e99c85556",
+        "chatSessionId": "sess_55861c97-15ad-4a52-ad60-ceee140eaf39",
+        "timestamp": 1794301382218
+      },
+      {
+        "executionId": "9911541b-cef5-412b-9cb1-245e99c85556",
+        "chatSessionId": "sess_55861c97-15ad-4a52-ad60-ceee140eaf39",
+        "timestamp": 1794301600468
+      }
+    ],
+    "14. Pipeline Orchestrator": [
+      {
+        "executionId": "9911541b-cef5-412b-9cb1-245e99c85556",
+        "chatSessionId": "sess_55861c97-15ad-4a52-ad60-ceee140eaf39",
+        "timestamp": 1794301600642
+      }
+    ],
+    "15.1 Write property test for dry run producing zero disk mutations": [
+      {
+        "executionId": "5d4b7bc0-ac9f-405f-875c-b01b2323c6c0",
+        "chatSessionId": "sess_b0756770-6421-415d-b7a1-f10f77466e60",
+        "timestamp": 1794301631001
+      },
+      {
+        "executionId": "5d4b7bc0-ac9f-405f-875c-b01b2323c6c0",
+        "chatSessionId": "sess_b0756770-6421-415d-b7a1-f10f77466e60",
+        "timestamp": 1794302172660
+      }
+    ],
+    "15. Property-based tests for remaining properties": [
+      {
+        "executionId": "5d4b7bc0-ac9f-405f-875c-b01b2323c6c0",
+        "chatSessionId": "sess_b0756770-6421-415d-b7a1-f10f77466e60",
+        "timestamp": 1794302172802
+      }
+    ],
+    "16.1 Write integration test — full pipeline with mixed file types": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302223576
+      },
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302635926
+      }
+    ],
+    "16.2 Write integration test — metadata persistence and reload across two runs": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302640811
+      },
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794303218463
+      }
+    ],
+    "16.3 Write integration test — AI service failure with fallback categorization": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302644685
+      },
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794303218653
+      }
+    ],
+    "16.4 Write integration test — dry run produces zero mutations": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302649914
+      },
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794303219139
+      }
+    ],
+    "16.5 Write integration test — SIGINT produces partial metadata flush": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302655582
+      },
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794303219656
+      }
+    ],
+    "16.6 Write integration test — AI returns out-of-taxonomy category": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794302661576
+      },
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794303219850
+      }
+    ],
+    "16. Integration tests": [
+      {
+        "executionId": "86ce7b66-f6ea-45c2-b390-5a011954ea4b",
+        "chatSessionId": "sess_69ad8724-f666-44ad-b810-9553235a5821",
+        "timestamp": 1794303219933
+      }
+    ],
+    "17. Final checkpoint — ensure all tests pass": [
+      {
+        "executionId": "470c3096-bf45-43ee-a7c8-70c924e497fe",
+        "chatSessionId": "sess_1ff2d083-82f8-4331-98d5-364428da85aa",
+        "timestamp": 1794303247510
       }
     ]
   }

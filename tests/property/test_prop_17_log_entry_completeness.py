@@ -8,6 +8,7 @@ Validates: Requirements 9.2, 9.5 (Property 17)
 from __future__ import annotations
 
 import json
+import logging
 import re
 import tempfile
 from io import StringIO
@@ -105,10 +106,17 @@ def _run_logger(target_dir: Path, calls_fn) -> None:
         calls_fn(logger)
     finally:
         logger.__exit__(None, None, None)
-        # Explicitly remove the file handler from the named logger so that
-        # Hypothesis shrinking steps don't reuse a closed handler pointing to a
-        # deleted temporary directory.
-        logger._file_logger.removeHandler(logger._handler)
+        # Explicitly close and remove the file handler from the named logger so
+        # that Hypothesis shrinking steps don't reuse a closed handler pointing
+        # to a deleted temporary directory.
+        handler = logger._handler
+        file_logger = logger._file_logger
+        handler.close()
+        file_logger.removeHandler(handler)
+        # Also remove the logger from Python's logging manager dict so a
+        # subsequently created OrganizerLogger with the same id() (same memory
+        # address reuse by CPython) doesn't inherit a stale closed handler.
+        logging.Logger.manager.loggerDict.pop(file_logger.name, None)
 
 
 # ---------------------------------------------------------------------------

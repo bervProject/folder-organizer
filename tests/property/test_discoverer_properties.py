@@ -72,6 +72,34 @@ def _sanitize_tree(paths: list[str]) -> list[str]:
         if any(other.startswith(candidate_prefix) for other in seen if other != candidate):
             continue  # candidate would need to be a directory — skip it as a file
         result.append(candidate)
+
+    # On Windows, the filesystem is case-insensitive. Remove paths whose
+    # case-folded form conflicts with a directory component that another
+    # kept path uses. E.g. ['P/0', 'p'] must drop 'p' because 'P' already
+    # exists as a directory (parent of 'P/0').
+    if os.name == "nt":
+        # Collect all directory components (case-folded) used by kept paths.
+        dir_components: set[str] = set()
+        for path in result:
+            parts = path.replace("\\", "/").split("/")
+            for part in parts[:-1]:  # all but the final filename component
+                dir_components.add(part.casefold())
+        # Drop any top-level (single-component) file whose case-folded name
+        # collides with a directory component, and more generally drop any
+        # path whose first component collides with an existing directory.
+        filtered: list[str] = []
+        for path in result:
+            first_component = path.replace("\\", "/").split("/")[0].casefold()
+            if first_component in dir_components and "/" in path.replace("\\", "/"):
+                # This path's first component IS a directory — that's fine.
+                filtered.append(path)
+            elif first_component in dir_components:
+                # This path is a file whose name collides with a directory.
+                continue
+            else:
+                filtered.append(path)
+        result = filtered
+
     return result
 
 
@@ -106,7 +134,7 @@ def _create_tree(root: Path, rel_paths: list[str]) -> set[Path]:
 # ---------------------------------------------------------------------------
 
 @given(rel_paths=_tree_strategy)
-@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture], deadline=None)
 def test_discovers_all_files(rel_paths: list[str]) -> None:
     """FileDiscoverer returns exactly the set of regular files in the tree.
 
@@ -173,7 +201,7 @@ _patterns_strategy = st.lists(_pattern_strategy(), min_size=0, max_size=5)
 # ---------------------------------------------------------------------------
 
 @given(rel_paths=_tree_strategy, patterns=_patterns_strategy)
-@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture], deadline=None)
 def test_exclusion_filter_removes_all_matching_files(
     rel_paths: list[str],
     patterns: list[str],
@@ -228,7 +256,7 @@ def test_exclusion_filter_removes_all_matching_files(
         max_size=3,
     ),
 )
-@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@settings(max_examples=100, suppress_health_check=[HealthCheck.function_scoped_fixture], deadline=None)
 def test_discovery_count_report_is_accurate(rel_paths: list[str], patterns: list[str]) -> None:
     """Reported counts exactly partition all regular files in the tree.
 

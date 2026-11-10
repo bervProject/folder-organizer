@@ -324,8 +324,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 14. Pipeline Orchestrator
-  - [ ] 14.1 Implement `organizer.py` — pipeline wiring and dry-run short-circuit
+- [x] 14. Pipeline Orchestrator
+  - [x] 14.1 Implement `organizer.py` — pipeline wiring and dry-run short-circuit
     - Implement `Organizer(config: Config)` class with `run() -> RunSummary`
     - Stage sequence: `FileDiscoverer.discover` → `FileInspector.inspect` (per file) → `AICategorizer.categorize` (per file) → if `dry_run`: print structured report and return; else: `FolderGenerator.resolve_placement` + `FolderGenerator.create_folders` → `FileMover.move` (per file) → `MetadataStore.upsert` → `MetadataStore.flush`
     - Load existing `MetadataStore` at startup before categorization begins
@@ -335,25 +335,25 @@ Implement the Local File Organizer as a Python CLI application following a linea
     - Collect `RunSummary` counts as stages complete; display final summary on completion
     - _Requirements: 1.3, 1.4, 2.4, 8.1, 8.2, 8.3, 8.4, 9.1, 9.3_
 
-  - [ ] 14.2 Write property test for below-threshold files never auto-moved
+  - [x] 14.2 Write property test for below-threshold files never auto-moved
     - **Property 3: Below-threshold files are never auto-moved**
     - Generate `(threshold, confidence)` pairs where `confidence < threshold`; run mocked pipeline; assert file is routed to `_review/`, not a category folder
     - Tag: `# Feature: local-file-organizer, Property 3: Below-threshold files are never auto-moved`
     - **Validates: Requirements 4.3, 7.5**
 
-  - [ ]* 14.3 Write property test for every processed file having a complete MetadataRecord
+  - [x] 14.3 Write property test for every processed file having a complete MetadataRecord
     - **Property 10: Every processed file has a complete MetadataRecord**
     - Generate arbitrary sets of `InspectedFile` instances; after processing through mocked pipeline stages, assert every file has a `MetadataRecord` with all required fields populated with correct types
     - Tag: `# Feature: local-file-organizer, Property 10: Every processed file has a complete MetadataRecord`
     - **Validates: Requirements 5.1, 5.2**
 
-  - [ ]* 14.4 Write property test for run summary count accuracy
+  - [x] 14.4 Write property test for run summary count accuracy
     - **Property 18: Run summary counts match actual operation counts**
     - Run pipeline over known sets of files with predetermined mock outcomes; assert `RunSummary.total_moved`, `total_skipped`, `total_review`, `total_unplaced`, `total_errors` equal the true counts of files in each outcome bucket
     - Tag: `# Feature: local-file-organizer, Property 18: Run summary counts match actual operation counts`
     - **Validates: Requirements 9.3**
 
-  - [ ]* 14.5 Write unit tests for `Organizer`
+  - [x] 14.5 Write unit tests for `Organizer`
     - Test dry run does not create folders, move files, or write metadata
     - Test dry run output report lists all files with correct proposed destinations
     - Test `_review` files appear in dry-run report with correct flag
@@ -363,8 +363,8 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 15. Property-based tests for remaining properties
-  - [ ] 15.1 Write property test for dry run producing zero disk mutations
+- [x] 15. Property-based tests for remaining properties
+  - [x] 15.1 Write property test for dry run producing zero disk mutations
     - **Property 9: Dry run produces zero disk mutations**
     - Generate a temp directory with arbitrary file names and contents; snapshot the directory state; run the full pipeline with `dry_run=True` (mocked AI); take a second snapshot; assert the two snapshots are identical (no files moved, no folders created, no `organizer-metadata.json` written)
     - Tag: `# Feature: local-file-organizer, Property 9: Dry run produces zero disk mutations`
@@ -372,37 +372,37 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [ ] 16. Integration tests
-  - [ ] 16.1 Write integration test — full pipeline with mixed file types
+- [x] 16. Integration tests
+  - [x] 16.1 Write integration test — full pipeline with mixed file types
     - Create a synthetic `tmp_path` directory with text files, a PDF stub, an image, and a binary file
     - Mock the OpenAI API via `responses` library to return valid categorization results
     - Run `Organizer.run()` end-to-end; assert all files are moved to correct category folders, `organizer-metadata.json` is written with all records, `organizer.log` is created
     - _Requirements: 1.x, 2.x, 3.x, 4.x, 5.x, 6.x, 7.x, 9.x_
 
-  - [ ] 16.2 Write integration test — metadata persistence and reload across two runs
+  - [x] 16.2 Write integration test — metadata persistence and reload across two runs
     - Run the pipeline over a set of files; record the `organizer-metadata.json`
     - Run the pipeline again over the same directory; assert previously processed files are skipped (reuse existing records), new files are added, and no existing records are removed
     - _Requirements: 5.5, 5.6, 5.7_
 
-  - [ ] 16.3 Write integration test — AI service failure with fallback categorization
+  - [x] 16.3 Write integration test — AI service failure with fallback categorization
     - Mock the OpenAI API to return a 503 error; run the pipeline; assert all files receive extension-based fallback categories, `fallback_used = True`, `confidence = 0.0` in all records
     - _Requirements: 4.6, 4.8_
 
-  - [ ] 16.4 Write integration test — dry run produces zero mutations
+  - [x] 16.4 Write integration test — dry run produces zero mutations
     - Snapshot directory state; run with `dry_run=True`; assert directory state is unchanged and `organizer-metadata.json` is not written
     - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-  - [ ] 16.5 Write integration test — SIGINT produces partial metadata flush
+  - [x] 16.5 Write integration test — SIGINT produces partial metadata flush
     - Start a run over a large synthetic directory; inject `SIGINT` mid-run using `os.kill`; assert `organizer-metadata.json` contains records for all files processed up to the interrupt point and a partial summary is printed
     - _Requirements: 9.4_
 
-  - [ ] 16.6 Write integration test — AI returns out-of-taxonomy category
+  - [x] 16.6 Write integration test — AI returns out-of-taxonomy category
     - Mock the OpenAI API to return a category not in the taxonomy; assert the affected files are routed to `_review/`, `review_required = True` in their records, and no file is moved to a category folder
     - _Requirements: 4.7_
 
 ---
 
-- [ ] 17. Final checkpoint — ensure all tests pass
+- [-] 17. Final checkpoint — ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ---
