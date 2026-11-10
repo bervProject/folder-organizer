@@ -402,7 +402,7 @@ Implement the Local File Organizer as a Python CLI application following a linea
 
 ---
 
-- [-] 17. Final checkpoint — ensure all tests pass
+- [x] 17. Final checkpoint — ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ---
